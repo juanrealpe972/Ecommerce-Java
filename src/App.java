@@ -1,34 +1,42 @@
 public class App {
     public static void main(String[] args) throws Exception {
+        // ------------------------------------------------------------------------------------------------------------
+        // POO configurado con atributos publicos y además isntanciando una clase Carrera en la clase persona. 
+        // Abstracción.
         System.out.println("Hello, World from App!");
 
-        Persona persona1 = new Persona();
-        persona1.nombre = "Juan";
-        persona1.apellido = "Ceron";
-        persona1.edad = 19;
-        Carrera carrera1 = new Carrera();
-        carrera1.nombre = "Ing informatico";
-        carrera1.duracion = 5;
-        carrera1.estaEnCurso = true;
+        // Instanciar
+        Persona persona1 = new Persona("Juan", "Ceron", 19, "Ing informatico", 10, false);
 
-        persona1.carrera = carrera1;
+        System.out.println(persona1.darNombreCompleto() + " tiene " + persona1.edad + " años y está estudiando "+ persona1.carrera.nombre + " que tiene una duración de " + persona1.carrera.duracion + " semestres.");
+        System.out.println(persona1.enviarSaludo("Camilo") + "\n");
 
-        Persona persona2 = new Persona();
-        persona2.nombre = "Camilo";
-        persona2.apellido = "Realpe";
-        persona2.edad = 41;
-        Carrera carrera2 = new Carrera();
-        carrera2.nombre = "Ing sistemas";
-        carrera2.duracion = 6;
-        carrera2.estaEnCurso = true;
+        // ------------------------------------------------------------------------------------------------------------
+        // POO configurada con atributos privados, encapsulamiento getters y setters
+        // Abstracción - Encapsulamiento.
+        Vehiculo vehiculo1 = new Vehiculo("Toyota", "TXL", 2024);
+
+        vehiculo1.setMarca("TOYOTA");
+        vehiculo1.setModelo("Prado TX");
+
+        System.out.println("Bienvenido " + vehiculo1.darEspecificacionesDelVehiculo() + "\n");
+
+        // ------------------------------------------------------------------------------------------------------------
+        // POO configurado con herencia de la clase Animal y con polimorfismo de la misma.
+        // Abstracción - Herencia - Polimorfismo.
+        Animal animal1 = new Animal("Pepe", "Blanco", 12);
+        Gato gato1 = new Gato("Max", "Café", 3);
+        Perro perro1 = new Perro("Peluche", "Amarillo", 5);
+
+        System.out.println("El animal llamado: " + animal1.nombre + " hace.");
+        System.out.println(animal1.hacerSonido());
+        System.out.println("El gato llamado: " + gato1.nombre + " hace.");
+        System.out.println(gato1.hacerSonido());
+        System.out.println("El perro llamado: " + perro1.nombre + " hace.");
+        System.out.println(perro1.hacerSonido());
         
-        persona2.carrera = carrera2;
-
-        System.out.println(persona1.darNombreCompleto() + " tiene " + persona1.edad + " años y está estudiando "+ persona1.carrera.nombre);
-        System.out.println(persona2.darNombreCompleto() + " tiene " + persona2.edad + " años y está estudiando "+ persona2.carrera.nombre);
-        System.out.println(persona1.enviarSaludo("Camilo"));
-        System.out.println(persona2.enviarSaludo("Felipe"));
-
+        System.out.println("El total de los animales creados es de: " + Animal.getCantidadAnimal());
+        System.out.println("Yo atiendo a mis animalitos en la veterinaria: " + Veterinaria.nombre);
     }
 }
 
