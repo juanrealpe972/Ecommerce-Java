@@ -36,7 +36,34 @@ public class App {
         System.out.println(perro1.hacerSonido());
         
         System.out.println("El total de los animales creados es de: " + Animal.getCantidadAnimal());
-        System.out.println("Yo atiendo a mis animalitos en la veterinaria: " + Veterinaria.nombre);
+        System.out.println("Yo atiendo a mis animalitos en la veterinaria: " + Veterinaria.nombre + "\n");
+
+        // ------------------------------------------------------------------------------------------------------------
+        // POO configurado con herencia de la clase Figura y con polimorfismo de la misma con datos estaticos y abstractos.
+        // Abstracción - Herencia - Polimorfismo.
+        Circulo circulo1 = new Circulo(10);
+        Rectangulo rectangulo1 = new Rectangulo(8, 6);
+
+        circulo1.imprimirInformacion();
+        System.out.println("El área del circulo es: " + circulo1.calcularArea());
+
+        rectangulo1.imprimirInformacion();
+        System.out.println("El área del rectangulo es: " + rectangulo1.calcularArea() + "\n");
+
+        // ------------------------------------------------------------------------------------------------------------
+        // Interfaces.
+        // Se extendieron de una clase abstracta llamada CriaturasMarinas y implementaron mas de una interfas 
+        Delfin delfin1 = new Delfin("Camilito");
+        Pulpo pulpo1 = new Pulpo("Gonzales", 8);
+
+        delfin1.nadar();
+        delfin1.alimentarse();
+        delfin1.comunicarse();
+        
+        pulpo1.nadar();
+        pulpo1.alimentarse();
+        pulpo1.comunicarse();
+
     }
 }
 
